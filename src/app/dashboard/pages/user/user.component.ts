@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   imports: [],
   templateUrl: './user.component.html',
-  styles: ``
+  styles: ``,
 })
-export class UserComponent {
-
-}
+export default class UserComponent {}
