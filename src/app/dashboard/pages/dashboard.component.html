@@ -1,3 +1,31 @@
-<p>dashboard works!</p>
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand">Angular 19</a>
+  </div>
+</nav>
 
-<router-outlet />
+<div class="row">
+  <nav
+    id="sidebarMenu"
+    class="col-md-3 col-lg-2 d-md-block sidebar collapse px-0"
+  >
+    <div class="p-1">
+      <div class="list-group list-group-flush">
+        @for (item of itemsMenu; track $index) {
+        <a
+          class="list-group-item list-group-item-action"
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          aria-current="true"
+        >
+          {{ item.title }}
+        </a>
+        }
+      </div>
+    </div>
+  </nav>
+
+  <main class="col-md-9 ms-sm-auto col-lg-10 p-2">
+    <router-outlet />
+  </main>
+</div>

@@ -1,1 +1,41 @@
-<p>control-flow works!</p>
+<div class="row">
+  <div class="col-lg-3 col-md-4 col-sm-6 mb-3 mb-sm-0">
+    <div class="card text-bg-secondary">
+      <div class="card-header">{{ "@if" }}</div>
+      <div class="card-body">
+        <span>{{ "value: " + showContent() }}</span>
+        <br />
+        <button class="btn btn-primary" (click)="toogleContent()">
+          Click me!
+        </button>
+        <h5 class="card-title">
+          @if (showContent()) {Hello world} @else {******}
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-4 col-sm-6 mb-3 mb-sm-0">
+    <div class="card text-bg-secondary">
+      <div class="card-header">{{ "@switch" }}</div>
+      <div class="card-body">
+        <span>{{ "value: " + grade() }}</span>
+        <h5 class="card-title">
+          @switch (grade()) { @case ('A') {Excellent} @case ('B') {Good} @case
+          ('D') {Poor} @default {Not graded} }
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-4 col-sm-6 mb-3 mb-sm-0">
+    <div class="card text-bg-secondary">
+      <div class="card-header">{{ "@for" }}</div>
+      <div class="card-body">
+        @for (framework of frameworks(); track $index) {
+        <h5 class="card-title">{{ $index + 1 + ": " + framework }}</h5>
+        }
+      </div>
+    </div>
+  </div>
+</div>
